@@ -20,37 +20,37 @@ hướng tiếp cận, các lệnh đã dùng, giải thích output và phần c
 
 | Level | Nội dung |
 |---|---|
-| [Level 0](levels/level-00.md) | Kết nối SSH lần đầu tới server, đọc hiểu host key fingerprint và banner |
-| [Level 1](levels/level-01.md) | Sau khi ssh vào server thì ở thư mục home luôn, nên hướng làm sẽ là ls để liệt kê các file… |
-| [Level 2](levels/level-02.md) | Ở đây tên file chứa password là - , vì đây là kí tự đặc biệt nên em nghĩ lệnh cat sẽ không… |
-| [Level 3](levels/level-03.md) | Đề bài nói rằng tên file là --spaces in this file name-- ở thư mục home nên chắc chắn dùng… |
-| [Level 4](levels/level-04.md) | Đề bài nói rằng password nằm trong 1 hidden file bên trong inhere directory, nên đầu tiên … |
-| [Level 5](levels/level-05.md) | Tiếp tục cd vào thư mục inhere, dùng lệnh ls -la để liệt kê các file, vì ở đây đề bảo pass… |
-| [Level 6](levels/level-06.md) | Đề bài nói rằng file chứa password nằm dưới thư mục inhere và cho các thông số của file đó… |
-| [Level 7](levels/level-07.md) | Đầu tiên dùng câu lệnh find . -user bandit7 -group bandit6 -size 33c và không thấy kết quả… |
-| [Level 8](levels/level-08.md) | Dùng lệnh grep để tìm dòng có chữ millionth trong file data.txt… |
-| [Level 9](levels/level-09.md) | Vì đề bài bảo password nằm trong file data.txt và là dòng chỉ xuất hiện đúng 1 lần nên sẽ … |
-| [Level 10](levels/level-10.md) | Dùng lệnh strings + tên file để lọc ra các dòng human readable, rồi tìm dòng nào bắt đầu b… |
-| [Level 11](levels/level-11.md) | File chứa password bị mã hóa Base64, dùng lệnh base64 -d + tên file… |
-| [Level 12](levels/level-12.md) | Đề bài bảo rằng nội dung trong file data.txt bị dịch 13 vị trí, kể cả chữ in hoa và in thư… |
-| [Level 13](levels/level-13.md) | Tạo 1 thư mục trong thư mục tạm, cp file chứa pass sang thư mục đó, rồi reverse file hexdu… |
-| [Level 14](levels/level-14.md) | Đề bài bảo rằng không có pass cho level tiếp theo, mà phải dùng sshkey nên sẽ scp file ssh… |
-| [Level 15](levels/level-15.md) | Sử dụng telnet, nc hoặc openssl để kết nối vào port 30000 trên localhost và nhập password … |
-| [Level 16](levels/level-16.md) | Đầu tiên, tạo 1 cặp ssh key ở máy windows, lưu public key vào máy kali ở trong file author… |
-| [Level 17](levels/level-17.md) | Dùng nmap để quét các port đang mở, sử dụng options -sV để nmap đoán port có dùng TLS khôn… |
-| [Level 18](levels/level-18.md) | Dùng lệnh diff để xem các dòng khác nhau giữa 2 file.… |
-| [Level 19](levels/level-19.md) | Vì .bashrc được cấu hình để ngay sau khi ssh vào lv 18 mình sẽ bị logout nên em sẽ thử chạ… |
-| [Level 20](levels/level-20.md) | Vì đề bài bảo có một file có setuid và hãy thử chạy nó không cần tham số để xem cách sử dụ… |
-| [Level 21](levels/level-21.md) | Mở một kết nối của mình tại cổng bất kì sử dụng nc, echo password lv20 vào làm stdin rồi d… |
-| [Level 22](levels/level-22.md) | Đọc nội dung trong file cron bài cho, xem nó dùng script gì rồi đọc nội dung trong script … |
-| [Level 23](levels/level-23.md) | Vào đọc file script rồi thực hiện đọc và chạy thử script.… |
-| [Level 24](levels/level-24.md) | Đọc file cronjob và từ đó đọc script bên trong để làm theo và lấy password.… |
-| [Level 25](levels/level-25.md) | Tạo 1 script ghi các input để bruteforce mã PIN từ 0000 đến 9999 rồi sau đó truyền vào por… |
-| [Level 26](levels/level-26.md) | Kết nối vào bandit26 nhờ sshkey rồi thu nhỏ terminal, dùng vi để sửa shell nhờ vào lỗi của… |
-| [Level 27](levels/level-27.md) | Sau khi mở được shell con ở level 26, ls -la thấy file bandit27-do được setuid nên sẽ dùng… |
-| [Level 28](levels/level-28.md) | Clone git về máy mình, cd vào thư mục repo rồi tìm mật khẩu.… |
-| [Level 29](levels/level-29.md) | Clone git về Clone git về máy mình, cd vào thư mục repo rồi tìm mật khẩu.… |
-| [Level 30](levels/level-30.md) | Clone git về và check git log, check các branch để tìm password.… |
+| [Level 0](levels/level-00.md) | Kết nối SSH lần đầu: cú pháp `ssh -p`, host key fingerprint, banner của server |
+| [Level 1](levels/level-01.md) | `ls` liệt kê file, `cat` đọc nội dung file readme trong thư mục home |
+| [Level 2](levels/level-02.md) | Đọc file có tên là dấu `-`: dùng đường dẫn `./-` hoặc `cat -- -` |
+| [Level 3](levels/level-03.md) | Đọc file có khoảng trắng trong tên: escape `\ `, dấu nháy, hoặc tab completion |
+| [Level 4](levels/level-04.md) | Tìm file ẩn bằng `ls -la`, đọc hiểu cột quyền `rwxr-xr-x`, owner và group |
+| [Level 5](levels/level-05.md) | Phân biệt file text và binary, dùng `file` để lọc ra file human-readable |
+| [Level 6](levels/level-06.md) | `find` với các option lọc theo kích thước, quyền và loại file |
+| [Level 7](levels/level-07.md) | `find` toàn hệ thống theo user, group, size; lọc bỏ lỗi permission denied |
+| [Level 8](levels/level-08.md) | `grep` tìm dòng chứa từ khóa trong file dữ liệu lớn |
+| [Level 9](levels/level-09.md) | `sort` kết hợp `uniq -u` để tìm dòng chỉ xuất hiện đúng một lần |
+| [Level 10](levels/level-10.md) | `strings` lọc chuỗi human-readable trong file binary, kết hợp `grep` |
+| [Level 11](levels/level-11.md) | Giải mã Base64 bằng `base64 -d` |
+| [Level 12](levels/level-12.md) | Giải mã ROT13 bằng `tr` để dịch ngược 13 vị trí bảng chữ cái |
+| [Level 13](levels/level-13.md) | Hexdump ngược bằng `xxd -r`, giải nén nhiều lớp gzip/bzip2/tar |
+| [Level 14](levels/level-14.md) | Đăng nhập bằng SSH private key với option `-i`, xử lý quyền file key |
+| [Level 15](levels/level-15.md) | Gửi password qua TCP tới port nội bộ bằng `nc` / `telnet` |
+| [Level 16](levels/level-16.md) | Kết nối TLS bằng `openssl s_client`, đọc thông tin certificate và session |
+| [Level 17](levels/level-17.md) | Quét port bằng `nmap -sV`, xác định port có TLS rồi kết nối lấy key |
+| [Level 18](levels/level-18.md) | So sánh hai file bằng `diff` để tìm dòng khác biệt |
+| [Level 19](levels/level-19.md) | Vượt `.bashrc` tự logout bằng cách chạy lệnh trực tiếp qua SSH |
+| [Level 20](levels/level-20.md) | Khai thác binary setuid `bandit20-do` để đọc file password của user khác |
+| [Level 21](levels/level-21.md) | Kết hợp `nc` listener với binary setuid để nhận password qua socket |
+| [Level 22](levels/level-22.md) | Đọc cronjob trong `/etc/cron.d/` và script mà nó thực thi |
+| [Level 23](levels/level-23.md) | Cronjob dùng `md5sum` sinh tên file đích, tự tính hash để lấy password |
+| [Level 24](levels/level-24.md) | Ghi script vào `/var/spool` để cronjob chạy với quyền user khác |
+| [Level 25](levels/level-25.md) | Brute-force mã PIN 4 chữ số, sinh dải input và gửi qua `nc` |
+| [Level 26](levels/level-26.md) | Thoát shell hạn chế: lợi dụng `more` và `vi` để mở shell thật |
+| [Level 27](levels/level-27.md) | Dùng binary setuid `bandit27-do` để đọc password |
+| [Level 28](levels/level-28.md) | `git clone` repo qua SSH và tìm password trong nội dung file |
+| [Level 29](levels/level-29.md) | `git log` và `git show` để tìm dữ liệu đã bị xóa trong lịch sử commit |
+| [Level 30](levels/level-30.md) | Duyệt các branch và tag trong git để tìm password ẩn |
 
 ## Kiến thức chính đã dùng
 
