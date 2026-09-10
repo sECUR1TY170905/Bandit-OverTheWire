@@ -3,8 +3,7 @@
 Báo cáo Task 1 – Tuần 4. Ghi chép quá trình giải wargame **Bandit** của OverTheWire:
 hướng tiếp cận, các lệnh đã dùng, giải thích output và phần checklist lý thuyết cho từng level.
 
-> Lưu ý: đây là bài tự làm, mục đích học tập. Nếu bạn cũng đang chơi Bandit, khuyến khích
-> tự thử trước khi đọc.
+> Lưu ý: đây là bài tự làm, mục đích học tập. 
 
 ## Cấu trúc repo
 
